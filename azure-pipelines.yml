@@ -60,3 +60,22 @@ stages:
         displayName: 'run calc'
         inputs:
           filePath: 'calc.sh'
+
+#Third Stage on Windows QA
+- stage: WindowsQAEnvCheck
+  dependsOn: UbuntuQAEnvCheck
+  condition: succeeded()
+  jobs:
+  - job: InternalScripts
+  #Windows Microsoft hosted image
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - checkout: none
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
+
+    - script: |
+        echo Learning is fun, enquire below.
+        echo See https://www.kavinschool.com/content/
+      displayName: 'Run a multi-line script'

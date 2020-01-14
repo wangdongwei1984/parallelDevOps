@@ -3,12 +3,12 @@ resources:
   # The name used to reference this repository in the checkout step
   - repository: dwangBashCalcRepo 
     type: github
-    endpoint: dwangGitHub
+    endpoint: wangdongwei1984
     name: wangdongwei1984/bashCalc
 # The name used to reference this repository in the checkout step
   - repository: dwangWindowsBatchRepo
     type: github
-    endpoint: dwangGitHub
+    endpoint: dwang2ndGitHub
     name: dwang2ndGitHub/winBatch
 
 trigger:

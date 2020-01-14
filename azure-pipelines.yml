@@ -1,7 +1,15 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+resources:
+  repositories:
+  # The name used to reference this repository in the checkout step
+  - repository: dwangBashCalcRepo 
+    type: github
+    endpoint: dwangGitHub
+    name: wangdongwei1984/bashCalc
+# The name used to reference this repository in the checkout step
+  - repository: dwangWindowsBatchRepo
+    type: github
+    endpoint: dwangGitHub
+    name: dwang2ndGitHub/winBatch
 
 trigger:
 - master

@@ -9,19 +9,25 @@ resources:
   - repository: dwangWindowsBatchRepo
     type: github
     endpoint: dwang2ndGitHub
-    name: dwang2ndGitHub/winBatch
+    name: wangdongwei1984/winBatch
 
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+stages:
+#First Stage on Ubuntu
+- stage: UbuntuQAEnvCheck
+  jobs:
+  - job: InlineScripts
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+    pool:
+      vmImage: 'ubuntu-latest'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
+
+    - script: |
+        echo Add other tasks to build, test, and deploy your project.
+        echo See https://aka.ms/yaml
+      displayName: 'Run a multi-line script'
